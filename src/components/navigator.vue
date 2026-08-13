@@ -1,7 +1,7 @@
 <template>
     <header id="header">
         <nav>
-            <a class="logo1" title="json.help"><img src="http://chevereto.xiuji.mynatapp.cc/images/2023/06/18/_-.jpg"  width="20%">    <span>   更多工具请关注公众号，发送 <b>工具</b> 获取</span></a>
+            <a class="logo1" title="json.help"><img :src="baseUrl + 'gzh.jpg'" width="20%">    <span>   更多工具请关注公众号，发送 <b>工具</b> 获取</span></a>
             <ul></ul>
         </nav>
 
@@ -10,7 +10,13 @@
 
 <script>
 export default {
-    name: "navigator"
+    name: "navigator",
+    computed: {
+        // GitHub Pages 子路径部署时指向 /jsonhelp/
+        baseUrl() {
+            return process.env.BASE_URL
+        }
+    }
 };
 </script>
 
