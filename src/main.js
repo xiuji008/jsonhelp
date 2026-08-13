@@ -7,7 +7,8 @@ import VueRouter from 'vue-router';
 Vue.config.productionTip = false
 
 const router = new VueRouter({
-    mode: 'history',
+    // GitHub Pages 为静态托管，不支持 history 回退，使用 hash 模式
+    mode: 'hash',
     routes
 })
 
